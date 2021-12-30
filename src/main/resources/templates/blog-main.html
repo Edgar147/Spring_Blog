@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:divth="http://www.w3.org/1999/html">
+<head>
+    <title>My blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocs/header::header"></header>
+
+<div class="container mt-5">
+<h1>my blog</h1>
+
+    <div th:each="elem :${posts}" class="alert-info mt-2">
+        <h3 th:text="${elem.title}"></h3>
+        <h3 th:text="${elem.anonse}"></h3>
+        <a th:href="'/blog/' + ${elem.id}" class="btn btn-warning"> Detail</a>
+    </div>
+
+
+
+</div>
+<footer th:insert="blocs/footer::footer"></footer>
+
+</body>
+</html>
